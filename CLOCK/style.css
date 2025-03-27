@@ -1,0 +1,42 @@
+/* Digital Clock Styling */
+body {
+	margin: 0;
+	font-family: monospace;
+	background-image: url("https://hips.hearstapps.com/hmg-prod/images/beautiful-sunset-over-cartagena-colombia-royalty-free-image-1677005371.jpg?crop=1xw:1xh;center,top&resize=980:*");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#clock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 30px 50px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#inclock {
+	color: white;
+	font-size: 50px;
+	font-weight: bold;
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Media query for responsive design */
+@media (max-width: 600px) {
+	#inclock {
+		font-size: 30px;
+	}
+	
+	#clock {
+		padding: 20px 30px;
+	}
+}

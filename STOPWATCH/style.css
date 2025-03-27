@@ -1,0 +1,64 @@
+body {
+  margin: 10px;
+  padding: 0;
+}
+.mydiv {
+  font-size: 4rem;
+  width: 100vw;
+  font-family: monospace;
+  text-align: center;
+}
+.container {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid lightslategray;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: whitesmoke;
+}
+.time {
+  font-family: monospace;
+  font-size: 4rem;
+  text-shadow: 2px 2px 2px black;
+}
+.buttons {
+  padding: 10px;
+  margin: 10px;
+}
+.start {
+  font-size: 2rem;
+  font-family: monospace;
+  border-radius: 10px;
+  background-color: rgb(7, 243, 7);
+  color: white;
+}
+.stop {
+  font-size: 2rem;
+  font-family: monospace;
+  border-radius: 10px;
+  background-color: rgb(234, 17, 17);
+  color: white;
+}
+.restart {
+  font-size: 2rem;
+  font-family: monospace;
+  border-radius: 10px;
+  background-color: rgb(106, 10, 209);
+  color: white;
+}
+.start:hover {
+  background-color: rgba(7, 243, 7, 0.5);
+  cursor: pointer;
+}
+.stop:hover {
+  background-color: rgba(234, 17, 17, 0.5);
+
+  cursor: pointer;
+}
+
+.restart:hover {
+  background-color: rgba(106, 10, 209, 0.5);
+  cursor: pointer;
+}

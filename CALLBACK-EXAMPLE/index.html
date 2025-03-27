@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Callbacks Demo</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+      }
+      .code-example {
+        background-color: #f8f9fa;
+        border-left: 4px solid #3498db;
+        padding: 15px;
+        margin: 20px 0;
+        font-family: monospace;
+        white-space: pre-wrap;
+        overflow-x: auto;
+      }
+      .output {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 15px;
+        border-radius: 4px;
+        font-family: monospace;
+        margin-top: 20px;
+        height: 300px;
+        overflow-y: auto;
+      }
+      .btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      .btn:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Callbacks Demo</h1>
+      <p>
+        This page demonstrates the concept of callbacks in JavaScript. Open the browser console
+        (F12 or right-click > Inspect > Console) to see the output of the callback functions.
+      </p>
+      
+      <h2>What are Callbacks?</h2>
+      <p>
+        Callbacks are functions passed as arguments to other functions, which are then
+        executed after some operation has been completed. They're commonly used for
+        asynchronous operations in JavaScript.
+      </p>
+      
+      <h2>Example</h2>
+      <div class="code-example">
+function task1(callback) {
+  setTimeout(() => {
+    console.log("Task 1 completed");
+    if (callback) callback();
+  }, 1000);
+}
+
+// Using the callback
+task1(() => {
+  console.log("This runs after task1 is complete");
+});
+      </div>
+      
+      <h2>Console Output</h2>
+      <div class="output" id="output">
+        <!-- Console output will be displayed here -->
+      </div>
+      
+      <div style="margin-top: 20px;">
+        <button class="btn" id="runDemo">Run Callback Demo</button>
+        <button class="btn" id="clearOutput">Clear Output</button>
+      </div>
+    </div>
+
+    <script>
+      // Script to display console output in the output div
+      const outputDiv = document.getElementById('output');
+      const runButton = document.getElementById('runDemo');
+      const clearButton = document.getElementById('clearOutput');
+      
+      // Override console.log to display in our output div
+      const originalConsoleLog = console.log;
+      console.log = function(message) {
+        originalConsoleLog.apply(console, arguments);
+        const logItem = document.createElement('div');
+        logItem.textContent = message;
+        outputDiv.appendChild(logItem);
+        outputDiv.scrollTop = outputDiv.scrollHeight;
+      };
+      
+      // Run demo button
+      runButton.addEventListener('click', function() {
+        console.log("Starting callback demo...");
+        // The main script will run automatically
+      });
+      
+      // Clear output button
+      clearButton.addEventListener('click', function() {
+        outputDiv.innerHTML = '';
+      });
+    </script>
+    
+    <script src="index.js"></script>
+  </body>
+</html>

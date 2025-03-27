@@ -1,0 +1,121 @@
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: #4CAF50;
+  --hover-color: #45a049;
+  --active-color: #e74c3c;
+  --text-color: #333;
+  --light-bg: #f9f9f9;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base styles and reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+  padding: 20px;
+}
+
+/* Layout containers */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.info-panel {
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Class tags styling */
+.class-tag {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 3px 8px;
+  margin: 0 4px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-family: monospace;
+}
+
+.class-tag:empty {
+  display: none;
+}
+
+/* Button styles */
+#mybutton {
+  font-size: 1rem;
+  width: 120px;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#mybutton:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+/* Class that can be added via JavaScript */
+.newbutton {
+  font-size: 1.2rem;
+  width: 160px;
+  height: 60px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.enabled {
+  background-color: var(--active-color);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  #mybutton, .newbutton {
+    width: 100%;
+    max-width: 200px;
+  }
+}
